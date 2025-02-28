@@ -172,14 +172,14 @@ const OTPhandle = ({ setIsOtpOpen, propemailRef, isforget }) => {
           <TickIcon />
         ) : (
           <>
-            <h2 className="text-xl font-semibold mb-4 text-[#22ff00a7]">
+            <h2 className="text-xl font-semibold mb-4 text-[#016630aa]">
               Enter OTP
             </h2>
             <div className="flex space-x-2">
               {!isvarifying ? (
                 otp.map((data, index) => (
                   <input
-                    className="w-12 h-12 text-center text-text rounded-md focus:outline-none focus:ring-2 ring-[#22ff00a7]"
+                    className="w-12 h-12 text-center text-text rounded-md focus:outline-none focus:ring-2 ring-[#016630aa] border border-[#016630aa]"
                     type="text"
                     maxLength="1"
                     key={index}
@@ -196,20 +196,20 @@ const OTPhandle = ({ setIsOtpOpen, propemailRef, isforget }) => {
                   />
                 ))
               ) : (
-                <MiniloadIcon className="w-7 h-7 text-[#22ff00a7] animate-spin-fast" />
+                <MiniloadIcon className="w-7 h-7 text-[#016630aa] animate-spin-fast" />
               )}
             </div>
             <button
-              className={`mt-4 text-[#22ff00a7] ${
+              className={`mt-4 text-[#016630aa] ${
                 !isResendDisabled ? "hover:cursor-pointer" : ""
-              } flex items-center gap-2 text-sm courgette`}
+              } flex items-center gap-2 text-sm `}
               onClick={handleResend}
               disabled={isResendDisabled}
             >
               {/* Resend OTP {isResendDisabled && `in ${resendTime}s`} */}
               {isResend ? (
                 <>
-                  <MiniloadIcon className="h-5 w-5 text-[#22ff00a7] animate-spin" />
+                  <MiniloadIcon className="h-5 w-5 text-[#016630aa] animate-spin" />
                   Resending Please wait
                 </>
               ) : (
