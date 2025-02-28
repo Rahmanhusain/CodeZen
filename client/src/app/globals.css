@@ -1,10 +1,14 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+.overpass{
+  font-family: 'Overpass', sans-serif;
 }
 .box-shad{
   box-shadow: 0 0 15px -5px #0005;

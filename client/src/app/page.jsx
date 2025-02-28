@@ -15,7 +15,7 @@ const faqData = [
   },
   {
     question: "How can I schedule a waste pickup?",
-    answer: "You can easily schedule a waste pickup after logging into your profile ."
+    answer: "You can easily schedule a waste pickup after logging into your profile ."
   },
   
 ]; 

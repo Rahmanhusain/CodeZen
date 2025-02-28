@@ -10,7 +10,7 @@ export default function Hero() {
       <h1 className=' text-4xl font-bold leading-12 drop-shadow-2xl font-serif'>Smart Technology Powering a Revolutionary Circular Economy</h1>
       <p className='italic font-sans drop-shadow-2xl my-10'>"Innovative Tech Driving Sustainability: Transforming Waste into Value for a Greener Future"</p>
 
-      <Link href="/schedulepickup" className='py-2 px-8 bg-white text-green-800 mt-5 font-bold tracking-wider uppercase font-sans text-xl rounded-full'>Get Started</Link>
+      <Link href="/schedulepickup" className='py-2 px-8 bg-white text-green-800 mt-5 font-bold tracking-wider  text-xl rounded-full overpass'>Sell Waste Items</Link>
       </div>
     </div>
   )

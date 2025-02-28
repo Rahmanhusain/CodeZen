@@ -3,8 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 
 const products = [
-  { name: "Paper", price: "₹150", quantity: "5kg", link: "/products/paper", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKr7KLRYm614imBxNtYkLLjl1vfL9XgnsqKzHahAdByRTB7RvZw-oXjMA&s=10" },
-  { name: "Plastic", price: "₹250", quantity: "2kg", link: "/products/plastic", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBgsdTzRtn-wntFZEn0GHJ4CJhdrTkQRMhQ4mP1VW0V1wSKJuVvfOi4Rri&s=10" },
+  { name: "Paper", price: "₹15", quantity: "5kg", link: "/products/paper", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKr7KLRYm614imBxNtYkLLjl1vfL9XgnsqKzHahAdByRTB7RvZw-oXjMA&s=10" },
+  { name: "Plastic", price: "₹25", quantity: "2kg", link: "/products/plastic", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBgsdTzRtn-wntFZEn0GHJ4CJhdrTkQRMhQ4mP1VW0V1wSKJuVvfOi4Rri&s=10" },
   { name: "Glass", price: "₹300", quantity: "1kg", link: "/products/glass", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRAuGU5S-sseZQ2prc5pdC-hZMp4gYCtelzg&usqp=CAU" },
   { name: "Cardboard", price: "₹220", quantity: "2kg", link: "/products/cardboard", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGn-R9N5puxTUmWQaGItDxGyP2B74TCfkItw&usqp=CAU" },
   { name: "Wood", price: "₹400", quantity: "1kg", link: "/products/wood", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLhAuBWJXqWhR9QUy5h_BjwaRLhoZRFG12q4rv2swE30E2gaF5L4Wkl5o&s=10" },
@@ -17,8 +17,8 @@ const products = [
 function Page() {
   return (
     <div
-      className="relative w-full h-full bg-cover bg-center"
-    style={{ backgroundImage: 'linear-gradient(#0005, #0005),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQbvZ2tN5uBhSxIj6_-Dc8mqP0mFZebygsbClSt6xizaraR-pbK5XTa9f&s=10)', backgroundAttachment: 'fixed' }} 
+      className="relative w-full h-full bg-cover bg-center bg-green-50"
+    // style={{ backgroundImage: 'linear-gradient(#0005, #0005),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQbvZ2tN5uBhSxIj6_-Dc8mqP0mFZebygsbClSt6xizaraR-pbK5XTa9f&s=10)', backgroundAttachment: 'fixed' }} 
     >
 
 
@@ -31,12 +31,13 @@ function Page() {
   );
 }
 
-const ProductCard = ({ name, quantity, link, image }) => {
+const ProductCard = ({ name,price, quantity, link, image }) => {
   return (
-    <Link href={link} className="w-72 pt-4 bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+    <Link href={link} className="w-72 pt-4 bg-white rounded-md box-shad shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
         <img src={image} alt={name} className="w-72 h-32 object-contain" />
         <div className="p-3 w-full">
           <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
+          <p className="text-sm text-gray-500">{price}/unit</p>
           <p className="text-sm text-gray-500">Available Quantity: {quantity}</p>
 
 

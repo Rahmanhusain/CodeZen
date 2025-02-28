@@ -31,10 +31,10 @@ export default function Navbar() {
             <nav className='flex flex-row gap-4 items-center '>
                 <Link href="/">Home</Link>
                 <Link href="/leaderboard">Leaderboard</Link>
-                <Link href="/shop">Shop</Link>
+                <Link href="/shop">Rate List</Link>
                 <Link href="/blogs">Blog</Link>
                 <Link href="/contact">Contact</Link>
-                <Link href="/schedulepickup" className='bg-white text-green-800 px-4 py-2 rounded-full'>Schedule Pickup</Link>
+                <Link href="/schedulepickup" className='bg-white text-green-800 px-4 py-2 rounded-full'>Sell Items</Link>
                 <Link href="/profile"><img src="/profile.png" width={50} height={50} alt="user profile" /></Link>
             </nav>
         </div>
