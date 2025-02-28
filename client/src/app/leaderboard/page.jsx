@@ -1,59 +1,80 @@
-import React from "react";
+'use client'
+import React, { useState } from 'react';
 
-const leaderboardData = [
-  { name: "Travis", score: "56.12 km", image: "https://via.placeholder.com/50", rank: 1 },
-  { name: "John", score: "46.78 km", image: "https://via.placeholder.com/50", rank: 2 },
-  { name: "Anna", score: "34.55 km", image: "https://via.placeholder.com/50", rank: 3 },
-  { name: "Andy Speed", score: "29.80 km", image: "https://via.placeholder.com/50", rank: 4 },
-  { name: "Lia Perec", score: "25.40 km", image: "https://via.placeholder.com/50", rank: 5 },
-];
-
-const Leaderboard = () => {
+const LeaderboardComponent = () => {
+  const [activeTab, setActiveTab] = useState('weekly');
+  
+  // Sample data for the leaderboard
+  const leaderboardData = {
+    weekly: [
+      { id: 1, name: "Alex Morgan", score: 2850, change: "up" },
+      { id: 2, name: "Jamie Chen", score: 2710, change: "down" },
+      { id: 3, name: "Taylor Wilson", score: 2580, change: "up" },
+      { id: 4, name: "Jordan Smith", score: 2420, change: "up" },
+      { id: 5, name: "Casey Brown", score: 2340, change: "same" }
+    ],
+    
+  };
+  
+  // Get the appropriate icon based on change status
+    
+  
+  // Get rank badge styling
+  const getRankBadge = (rank) => {
+    switch(rank) {
+      case 1:
+        return "bg-yellow-400 text-yellow-900";
+      case 2:
+        return "bg-gray-300 text-gray-800";
+      case 3:
+        return "bg-amber-600 text-amber-900";
+      default:
+        return "bg-gray-100 text-gray-700";
+    }
+  };
+  
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <h2 className="text-xl font-bold text-center mb-6">Weekly Run Rank</h2>
+    <div className='flex items-center justify-center w-full min-h-screen'>
 
-      {/* Top 3 Players */}
-      <div className="relative flex justify-center w-full max-w-md">
-        {/* 2nd Place - Left, Slightly Lower */}
-        <div className="absolute left-0 bottom-4 flex flex-col items-center">
-          <img src={leaderboardData[1].image} alt={leaderboardData[1].name} className="w-14 h-14 rounded-full border-4 border-gray-400" />
-          <span className="font-medium">{leaderboardData[1].name}</span>
-          <span className="text-gray-600">{leaderboardData[1].score}</span>
+    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md w-1/2 md:max-w-2xl">
+      <div className="p-6">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-gray-800">Leaderboard</h2>
+          <div className="flex space-x-2 text-sm">
+            
+            
+          </div>
         </div>
-
-        {/* 1st Place - Center, Highest */}
-        <div className="flex flex-col items-center">
-          <img src={leaderboardData[0].image} alt={leaderboardData[0].name} className="w-16 h-16 rounded-full border-4 border-yellow-500" />
-          <span className="font-bold text-yellow-500">{leaderboardData[0].name}</span>
-          <span className="text-gray-600">{leaderboardData[0].score}</span>
-        </div>
-
-        {/* 3rd Place - Right, Slightly Lower than 2nd */}
-        <div className="absolute right-0 bottom-2 flex flex-col items-center">
-          <img src={leaderboardData[2].image} alt={leaderboardData[2].name} className="w-12 h-12 rounded-full border-4 border-orange-500" />
-          <span className="font-medium">{leaderboardData[2].name}</span>
-          <span className="text-gray-600">{leaderboardData[2].score}</span>
+        
+        <div className="overflow-hidden">
+          <ul className="divide-y divide-gray-200">
+            {leaderboardData[activeTab].map((user) => (
+              <li key={user.id} className="py-4 flex items-center justify-between hover:bg-gray-50 rounded-md transition duration-150 ease-in-out p-2">
+                <div className="flex items-center space-x-4">
+                  <div className={`${getRankBadge(user.id)} w-8 h-8 flex-shrink-0 rounded-full flex items-center justify-center font-bold`}>
+                    {user.id}
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-gray-900 truncate">
+                      {user.name}
+                    </p>
+                    
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="text-lg font-semibold text-blue-600">{user.score.toLocaleString()}</p>
+                  <p className="text-xs text-gray-500">points</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-
-      {/* 4th and 5th Place - Below */}
-      <ul className="mt-8 w-full max-w-md">
-        {leaderboardData.slice(3).map((player, index) => (
-          <li key={index} className="flex justify-between items-center bg-gray-50 p-2 rounded-lg mb-2 shadow-sm">
-            <div className="flex items-center space-x-3">
-              <span className="font-bold text-gray-700">{player.rank}</span>
-              <img src={player.image} alt={player.name} className="w-10 h-10 rounded-full" />
-              <span className="font-medium">{player.name}</span>
-            </div>
-            <span className="text-gray-600">{player.score}</span>
-          </li>
-        ))}
-      </ul>
     </div>
+    </div>
+
   );
 };
 
-export default function App() {
-  return <Leaderboard />;
-}
+export default LeaderboardComponent;
