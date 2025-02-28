@@ -56,6 +56,8 @@ const LeaderboardComponent = () => {
                   </div>
                   
                   <div className="flex-1 min-w-0">
+ 
+ 
                     <p className="text-sm font-medium text-gray-900 truncate">
                       {user.name}
                     </p>
