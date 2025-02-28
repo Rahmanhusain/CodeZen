@@ -16,7 +16,7 @@ export default function Navbar() {
 
     return (
         <div
-            className={`w-full h-20 fixed z-10 flex flex-row items-center justify-between px-24 ease-in-out transition-colors duration-300 ${scrolling ? 'bg-green-800 ' : 'bg-[#016630aa] '}  backdrop-blur-sm text-white `}
+            className={`w-full h-20 fixed z-20 flex flex-row items-center justify-between px-24 ease-in-out transition-colors duration-300 ${scrolling ? 'bg-green-800 ' : 'bg-[#016630aa] '}  backdrop-blur-sm text-white `}
         >
             <div className={`logo flex flex-row items-center justify-start gap-4 h-full ${scrolling ? '' : 'bg-[#0000] '}  `}>
                 <img

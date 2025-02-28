@@ -1,5 +1,6 @@
+'use client';
 import React, { useState } from 'react';
-import './LeaderboardComponent.css'; // You'll need to create this CSS file
+// import './LeaderboardComponent.css'; // You'll need to create this CSS file
 
 const LeaderboardComponent = () => {
   const [activeTab, setActiveTab] = useState('weekly');
