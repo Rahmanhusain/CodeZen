@@ -32,7 +32,7 @@ function SchedulePickUp() {
                     {
                         parts: [
                             {
-                                text: "Identify the type of recyclable item in the given image. Categories may include plastic, paper, glass, metal, or other common recyclable materials."
+                                text: "Identify the waste type in the image. Respond with only one word from this list: 'Plastic', 'Paper', 'Glass', 'Metal', 'E-Waste', or 'Cardboard'. Do not provide any explanation."
                             },
                             {
                                 inlineData: {
@@ -44,18 +44,16 @@ function SchedulePickUp() {
                     }
                 ]
             });
-    
+
             const responseText = await response.response.text(); // Correct way to extract response
             setItemCategory(responseText.trim()); // Set extracted text as category
         } catch (error) {
             console.error("Error identifying item:", error);
-            setItemCategory("Error identifying item");
+            setItemCategory(""); // Allow user to select manually if there's an error
         } finally {
             setIsLoading(false);
         }
     };
-    
-    
 
     const captureImage = useCallback(() => {
         const imageSrc = webcamRef.current.getScreenshot();
@@ -190,12 +188,27 @@ function SchedulePickUp() {
                                 />
                             </div>
 
-                            {itemCategory && (
-                                <div className="bg-green-50 p-4 rounded-lg mb-6">
-                                    <p className="text-black font-medium">Identified Item Category:</p>
-                                    <p className="text-lg font-bold text-teal-700">{itemCategory}</p>
-                                </div>
-                            )}
+                            {/* Item Category Dropdown */}
+                            <div className="mb-6">
+                                <label htmlFor="item-category" className="block text-sm font-medium text-black mb-2">
+                                    Item Category
+                                </label>
+                                <select
+                                    id="item-category"
+                                    value={itemCategory}
+                                    onChange={(e) => setItemCategory(e.target.value)}
+                                    className="mt-1 block w-full rounded-md text-gray-600 border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 py-2 px-3 border"
+                                    required
+                                >
+                                    <option value="">Select a category</option>
+                                    <option value="Plastic">Plastic</option>
+                                    <option value="Paper">Paper</option>
+                                    <option value="Glass">Glass</option>
+                                    <option value="Metal">Metal</option>
+                                    <option value="E-Waste">E-Waste</option>
+                                    <option value="Cardboard">Cardboard</option>
+                                </select>
+                            </div>
 
                             {isLoading && (
                                 <div className="text-center text-gray-600">
