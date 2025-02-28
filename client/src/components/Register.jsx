@@ -88,22 +88,8 @@ export default function Register() {
 
   return (
     <section className="bg-transparent cookie">
-      <CustomLink
-        href={"/"}
-        className="absolute left-3 top-3 text-text flex items-center text-base hover:cursor-pointer"
-      >
-        <BackIcon size={30} /> Back to Home
-      </CustomLink>
-
-
-      <div className="flex flex-col items-center justify-center px-3 sm:px-6 mx-auto min-h-[calc(100dvh-4.6rem)] animate-dropped">
-        <CustomLink
-          href="/"
-          className="flex items-center text-2xl font-semibold text-text"
-        >
-          {/*           <Image className="w-16 h-auto" loading="lazy" src={logo} alt="logo" />
-           */}{" "}
-        </CustomLink>
+      <div className="flex flex-col items-center justify-center px-3 sm:px-6 mx-auto min-h-[calc(100dvh-4.6rem)] pt-40 animate-dropped">
+      
         <div className="w-full bg-background rounded-lg shadow-xl md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1
@@ -320,7 +306,7 @@ export default function Register() {
           </div>
         </div>
       </div>
-      {!isOtpOpen && (
+      {isOtpOpen && (
         <OTPhandle
           setIsOtpOpen={setIsOtpOpen}
           propemailRef={propemailRef.current}

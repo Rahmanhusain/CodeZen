@@ -156,7 +156,7 @@ export default function Login() {
                 <CustomLink
                   href="/register"
                   className="font-medium text-primary hover:underline text-green-800"
-                  
+
                 >
                   Register
                 </CustomLink>

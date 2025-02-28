@@ -112,7 +112,7 @@ export async function POST(request) {
 
     return NextResponse.json({
       message: "Email send successfully ",
-      otp: "fuck off bitch",
+      otp: otp,
       status: 201,
     });
   } catch (error) {

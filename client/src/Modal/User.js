@@ -20,14 +20,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     unique: true,
   },
-  Profilename: {
+  name: {
     type: String,
     trim: true,
-    default: null,
-  },
-  gender: {
-    type: String,
-    default: null,
+    required: true,
   },
   email: {
     type: String,
@@ -36,85 +32,25 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  phoneNumber: {
-    type: String,
-  },
-  enrollmentno: {
-    type: String,
-  },
-
-  matchrequest: {
-    type: [Number],
-    default: [],
-  },
-  matched: {
-    type: [Number],
-    default: [],
-  },
-  matchnotification: {
-    type: Boolean,
-    default: false,
-  },
-  profilephotosrc: {
+  profilePhoto: {
     type: String,
     default:
       "https://iffadcitwirnptuabcbr.supabase.co/storage/v1/object/public/findyourdateuserimages//avatar.png",
   },
-  keywords: {
-    key1: {
-      type: String,
-      default: "",
-    },
-    key2: {
-      type: String,
-      default: "",
-    },
-    key3: {
-      type: String,
-      default: "",
-    },
-  },
-  bio: {
+  phoneNumber: {
     type: String,
-    default: "",
+    required: true,
   },
-  notififlastindex: {
-    type: Number,
-    default: 0,
+  alternatePhoneNumber: {
+    type: String,
   },
-  Instagram: {
-    Username: {
-      type: String,
-      default: "",
-    },
-    Link: {
-      type: String,
-      default: "",
-    },
+  address: {
+    type: String,
+    required: true,
   },
-  Snapchat: {
-    Username: {
-      type: String,
-      default: "",
-    },
-    Link: {
-      type: String,
-      default: "",
-    },
-  },
-  Facebook: {
-    Username: {
-      type: String,
-      default: "",
-    },
-    Link: {
-      type: String,
-      default: "",
-    },
+  pickupSchedules: {
+    type: [String], // Assuming pickup schedules are stored as strings
+    default: [],
   },
   createdAt: {
     type: Date,
@@ -122,20 +58,12 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-// Pre-save hook to sort `matchrequest` array in ascending order
-UserSchema.pre("save", function (next) {
-  if (this.matchrequest && this.matchrequest.length > 0) {
-    this.matchrequest.sort((a, b) => a - b);
-  }
-  next();
-});
-
 // Pre-save hook to assign unique `userid` if not present
 UserSchema.pre("save", async function (next) {
   if (!this.userid) {
     try {
       const counter = await Counter.findOneAndUpdate(
-        { sequenceName: "userId" }, // Ensure this is a string
+        { sequenceName: "userId" },
         { $inc: { sequenceValue: 1 } },
         { new: true, upsert: true }
       );
