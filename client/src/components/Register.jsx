@@ -130,7 +130,7 @@ export default function Register() {
                   type="text"
                   name="name"
                   id="name"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full  block w-full p-2.5"
+                  className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full  block w-full p-2.5"
                   placeholder="John Doe"
                   pattern="^[A-Za-z\s]+$"
                   title="Name should not contain numbers."
@@ -156,7 +156,7 @@ export default function Register() {
                   type="email"
                   name="email"
                   id="email"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
                   placeholder="example@domain.com"
                   required
                 />
@@ -172,7 +172,7 @@ export default function Register() {
                   type="tel"
                   name="phone"
                   id="phone"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
                   placeholder="example@domain.com"
                   required
                 />
@@ -188,7 +188,7 @@ export default function Register() {
                   type="tel"
                   name="altphone"
                   id="altphone"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
                   placeholder="example@domain.com"
                   required
                 />
@@ -209,7 +209,7 @@ export default function Register() {
                   title="Password should be at least 8 characters and contain one special character."
                   pattern="(?=.*[\W_]).{8,}"
                   placeholder="••••••••"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full focus:border-primary block w-full p-2.5"
+                  className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full focus:border-primary block w-full p-2.5"
                   required
                 />
                 <span
@@ -252,7 +252,7 @@ export default function Register() {
                     colormatch
                       ? "focus:border-green-500"
                       : "focus:border-red-500"
-                  } placeholder-gray-400 outline-none courgette text-sm rounded-full block w-full p-2.5`}
+                  } placeholder-gray-400 outline-none font-sans text-sm rounded-full block w-full p-2.5`}
                   required
                 />
                 <span

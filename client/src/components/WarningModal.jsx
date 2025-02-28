@@ -44,7 +44,7 @@ function WarningModal({ messege,setisWarnOpen }) {
         <div className="flex justify-center">
           {/* <button className="h-9 w-20 rounded-3xl bg-transparent outline-2 outline-white">close</button> */}
           
-            <button className="h-8 w-14 text-center text-gray-50 text-lg rounded-3xl bg-[#db4784]" onClick={() => {
+            <button className="h-8 w-14 text-center text-gray-50 text-lg rounded-3xl bg-green-800" onClick={() => {
             setcloseanim(!closeanim);
             setTimeout(() => {
               setisWarnOpen(false);
