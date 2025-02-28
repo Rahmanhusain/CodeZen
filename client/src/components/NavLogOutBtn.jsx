@@ -92,7 +92,7 @@ function NavLogOutBtn() {
   return (
     <div className="w-auto h-full">
       {user.email === null ? (
-        <div className="flex flex-row items-center justify-evenly text-lg gap-3 w-fit cookie h-full ">
+        <div className="flex flex-row items-center justify-evenly text-lg gap-3 w-fit font-sans h-full ">
           <Link
             href="/register"
             className=" py-1 px-2 rounded-lg border-2 select-none border-[#bd145b] w-20 text-center"
@@ -107,7 +107,7 @@ function NavLogOutBtn() {
           </Link>
         </div>
       ) : (
-        <div className="flex flex-row items-center justify-evenly text-lg gap-6 w-fit cookie h-full">
+        <div className="flex flex-row items-center justify-evenly text-lg gap-6 w-fit font-sans h-full">
           <button
             onClick={() => {
               setopenNotification(true);

@@ -87,7 +87,7 @@ export default function Register() {
   };
 
   return (
-    <section className="bg-transparent cookie">
+    <section className="bg-transparent font-sans">
       <div className="flex flex-col items-center justify-center px-3 sm:px-6 mx-auto min-h-[calc(100dvh-4.6rem)] pt-40 animate-dropped">
       
         <div className="w-full bg-background rounded-lg shadow-xl md:mt-0 sm:max-w-md xl:p-0">
@@ -159,7 +159,7 @@ export default function Register() {
                   name="phone"
                   id="phone"
                   className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
-                  placeholder="example@domain.com"
+                  placeholder="9876543210"
                   required
                 />
                 </div>
@@ -175,7 +175,7 @@ export default function Register() {
                   name="altphone"
                   id="altphone"
                   className="bg-transparent font-sans text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
-                  placeholder="example@domain.com"
+                  placeholder="9876543210"
                   required
                 />
                 </div>
@@ -249,43 +249,15 @@ export default function Register() {
                 </span>
               </div>
 
-              <div className="flex items-start">
-                <input
-                  id="terms"
-                  type="checkbox"
-                  className="w-4 h-4 border-[#717071bf] rounded focus:ring-3 focus:ring-primary"
-                  required
-                />
-                <label
-                  htmlFor="terms"
-                  className="ml-2 text-base font-light text-gray-50"
-                >
-                  I accept the{" "}
-                  <Link
-                    href="https://drive.google.com/file/d/1_try-L11JBRFVy45VIRxALG18lPfWzr1/view?usp=sharing"
-                    target="_blank"
-                    className="font-medium text-primary hover:underline text-green-800"
-                  >
-                    Terms and Conditions
-                  </Link>{" "}
-                  and{" "}
-                  <Link
-                    href="https://drive.google.com/file/d/1BIh_Y0yrHZbCHlkZYpoxrFcNc1sbhVKg/view?usp=sharing"
-                    target="_blank"
-                    className="font-medium text-primary hover:underline text-green-800"
-                  >
-                    Privacy Policy
-                  </Link>
-                </label>
-              </div>
+              
 
               <button
                 type="submit"
                 disabled={isSending}
                 className={`w-full text-text ${
                   !isSending
-                    ? "bg-[#ff006aa7] focus:outline-none focus:ring-primary text-white"
-                    : "bg-[#f71b772f]"
+                    ? "bg-green-800 focus:outline-none focus:ring-primary text-white"
+                    : "bg-green-600"
                 } font-medium rounded-full text-lg px-5 py-[0.5rem] flex items-center justify-center gap-2`}
               >
                 {isSending && (
@@ -293,7 +265,7 @@ export default function Register() {
                 )}
                 {!isSending ? "Create An Account" : `Please Wait`}
               </button>
-              <div className="text-lg font-light text-gray-50">
+              <div className="text-lg font-light text-gray-800 text-center">
                 Already have an account?{" "}
                 <CustomLink
                   href="/login"
