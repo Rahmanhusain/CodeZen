@@ -9,6 +9,7 @@ const products = [
   { name: "Metal", price: "₹650", quantity: "2kg", link: "/products/metal", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2W46QDQTxPWvO1VpJ9gRyaUyoFIdSF17pwQ&usqp=CAU" },
   { name: "Fabric", price: "₹350", quantity: "3kg", link: "/products/fabric", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB4RbDtfqI_UpcBCPTjqfqjRhOBI-1BdXzhg&usqp=CAU" },
   { name: "Cotton", price: "₹180", quantity: "2kg", link: "/products/cotton", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mjg3WvHUD_svkkH6TXNfdz24XDD2vWg1Jw&usqp=CAU" },
+  { name: "E-waste", price: "₹500", quantity: "1kg", link: "/products/e-waste", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQbvZ2tN5uBhSxIj6_-Dc8mqP0mFZebygsbClSt6xizaraR-pbK5XTa9f&s=10" },
 ];
 
 function Page() {
