@@ -68,7 +68,7 @@ export default function Login() {
     }
   };
   return (
-    <section className="bg-transparent cookie">
+    <section className="bg-transparent">
       <CustomLink
         href={"/"}
         className="absolute left-3 top-3 text-text flex items-center text-sm hover:cursor-pointer"
@@ -76,7 +76,7 @@ export default function Login() {
         <BackIcon size={30} />
       </CustomLink>
 
-      <div className="flex flex-col items-center justify-center px-3 sm:px-6 mx-auto min-h-[calc(100dvh-4.6rem)]   animate-dropped">
+      <div className="flex flex-col items-center justify-center px-3 sm:px-6 mx-auto min-h-[calc(100dvh-4.6rem)] pt-40  animate-dropped">
         <CustomLink
           href="/"
           className="flex items-center text-2xl font-semibold text-text"
@@ -86,7 +86,7 @@ export default function Login() {
         </CustomLink>
         <div className="w-full bg-background rounded-lg shadow-xl  md:mt-0 sm:max-w-md xl:p-0 ">
           <div className=" space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-2xl text-[#db4784] font-bold leading-tight tracking-tight md:text-2xl">
+            <h1 className="text-2xl text-[#016630aa] font-bold leading-tight tracking-tight md:text-2xl">
               Login To Your Account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={Submit}>
@@ -102,7 +102,7 @@ export default function Login() {
                   name="email"
                   id="email"
                   autoComplete="email"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  className="bg-transparent  text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
                   placeholder="example@domain.com"
                   required
                 />
@@ -119,7 +119,7 @@ export default function Login() {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full focus:border-primary block w-full p-2.5"
+                  className="bg-transparent  text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full focus:border-primary block w-full p-2.5"
                   required
                 />
                 <span
@@ -132,7 +132,7 @@ export default function Login() {
               <div className="flex items-center justify-between">
                 <CustomLink
                   href="/forgotpassword"
-                  className="text-base font-medium text-[#f6588d] hover:underline"
+                  className="text-base font-medium text-[#016630aa] hover:underline"
                 >
                   Forgot password?
                 </CustomLink>
@@ -142,20 +142,20 @@ export default function Login() {
                 disabled={isloginsuccess ? true : false}
                 className={`w-full text-text ${
                   !isloginsuccess
-                    ? "bg-[#ff006aa7] focus:outline-none focus:ring-primary text-white"
+                    ? "bg-green-800 focus:outline-none focus:ring-primary text-white"
                     : "bg-[#f71b772f]"
-                } font-medium rounded-full text-lg px-5 py-[0.5rem] flex items-center justify-center gap-2`}
+                } font-medium rounded-full cursor-pointer text-lg px-5 py-[0.5rem] flex items-center justify-center gap-2`}
               >
                 {isloginsuccess && (
                   <MiniloadIcon className="w-5 h-5 text-text animate-spin" />
                 )}
                 {isloginsuccess ? "Please Wait" : "Login"}
               </button>
-              <div className="text-lg font-light text-gray-50">
+              <div className="text-lg font-light">
                 Don&apos;t have an account yet?{" "}
                 <CustomLink
                   href="/register"
-                  className="font-medium text-primary hover:underline text-[#db4784]"
+                  className="font-medium text-primary hover:underline text-green-800"
                 >
                   Register
                 </CustomLink>
