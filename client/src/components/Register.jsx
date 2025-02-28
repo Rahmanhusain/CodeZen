@@ -107,7 +107,7 @@ export default function Register() {
         <div className="w-full bg-background rounded-lg shadow-xl md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1
-              className="text-2xl text-[#db4784] font-bold leading-tight tracking-tight text-text md:text-2xl"
+              className="text-2xl text-green-800 font-bold leading-tight tracking-tight text-text md:text-2xl"
               onClick={() => {
                 dispatch(SetUser("sabeena kjhatun"));
                 }}
@@ -116,20 +116,7 @@ export default function Register() {
               </h1>
               <form className="space-y-4 md:space-y-6" onSubmit={Submit}>
                 <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-base font-medium text-text"
-                >
-                  Your email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
-                  placeholder="example@domain.com"
-                  required
-                />
+                
                 </div>
 
                 <div>
@@ -137,7 +124,7 @@ export default function Register() {
                   htmlFor="name"
                   className="block mb-2 text-base font-medium text-text"
                 >
-                  Your name
+                  Name
                 </label>
                 <input
                   type="text"
@@ -160,26 +147,52 @@ export default function Register() {
 
                 <div>
                 <label
-                  htmlFor="rollno"
-                  className="block mb-2 text-base courgette font-medium text-text"
+                  htmlFor="email"
+                  className="block mb-2 text-base font-medium text-text"
                 >
-                  IPU enrollment no.
+                  Email
                 </label>
                 <input
-                  type="text"
-                  name="rollno"
-                  id="rollno"
-                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none text-text rounded-full  block w-full p-2.5"
-                  placeholder="to verifying GTB4CEC students on IP Rank list"
-                  title="Enrollment no. should only contain numbers."
-                  onChange={(e) => {
-                    e.target.value = e.target.value.replace(/\D/g, "");
-                  }
-                }
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  placeholder="example@domain.com"
                   required
                 />
                 </div>
-
+                <div>
+                <label
+                  htmlFor="phone"
+                  className="block mb-2 text-base font-medium text-text"
+                >
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  placeholder="example@domain.com"
+                  required
+                />
+                </div>
+                <div>
+                <label
+                  htmlFor="altphone"
+                  className="block mb-2 text-base font-medium text-text"
+                >
+                  Alternative Phone
+                </label>
+                <input
+                  type="tel"
+                  name="altphone"
+                  id="altphone"
+                  className="bg-transparent courgette text-sm border-2 border-[#717071bf] placeholder-gray-400 outline-none rounded-full block w-full p-2.5"
+                  placeholder="example@domain.com"
+                  required
+                />
+                </div>
                 <div className="relative">
                 <label
                   htmlFor="password"
@@ -265,7 +278,7 @@ export default function Register() {
                   <Link
                     href="https://drive.google.com/file/d/1_try-L11JBRFVy45VIRxALG18lPfWzr1/view?usp=sharing"
                     target="_blank"
-                    className="font-medium text-primary hover:underline text-[#db4784]"
+                    className="font-medium text-primary hover:underline text-green-800"
                   >
                     Terms and Conditions
                   </Link>{" "}
@@ -273,7 +286,7 @@ export default function Register() {
                   <Link
                     href="https://drive.google.com/file/d/1BIh_Y0yrHZbCHlkZYpoxrFcNc1sbhVKg/view?usp=sharing"
                     target="_blank"
-                    className="font-medium text-primary hover:underline text-[#db4784]"
+                    className="font-medium text-primary hover:underline text-green-800"
                   >
                     Privacy Policy
                   </Link>
@@ -290,7 +303,7 @@ export default function Register() {
                 } font-medium rounded-full text-lg px-5 py-[0.5rem] flex items-center justify-center gap-2`}
               >
                 {isSending && (
-                  <MiniloadIcon className="w-5 h-5 text-[#db4784] animate-spin" />
+                  <MiniloadIcon className="w-5 h-5 text-green-800 animate-spin" />
                 )}
                 {!isSending ? "Create An Account" : `Please Wait`}
               </button>
@@ -298,7 +311,7 @@ export default function Register() {
                 Already have an account?{" "}
                 <CustomLink
                   href="/login"
-                  className="font-medium text-primary hover:underline text-[#db4784]"
+                  className="font-medium text-primary hover:underline text-green-800"
                 >
                   Login here
                 </CustomLink>

@@ -86,7 +86,7 @@ export default function Login() {
         </CustomLink>
         <div className="w-full bg-background rounded-lg shadow-xl  md:mt-0 sm:max-w-md xl:p-0 ">
           <div className=" space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-2xl text-[#db4784] font-bold leading-tight tracking-tight md:text-2xl">
+            <h1 className="text-2xl text-green-800 font-bold leading-tight tracking-tight md:text-2xl">
               Login To Your Account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={Submit}>
@@ -155,7 +155,7 @@ export default function Login() {
                 Don&apos;t have an account yet?{" "}
                 <CustomLink
                   href="/register"
-                  className="font-medium text-primary hover:underline text-[#db4784]"
+                  className="font-medium text-primary hover:underline text-green-800"
                 >
                   Register
                 </CustomLink>

@@ -25,7 +25,7 @@ function WarningModal({ messege,setisWarnOpen }) {
         </span>
         <div className="flex flex-col justify-center items-center py-2 gap-3 px-4">
           <svg
-            className="w-8 h-8 text-[#bd145b]"
+            className="w-8 h-8 text-green-800"
             aria-hidden="true"
             fill="none"
             viewBox="0 0 20 20"

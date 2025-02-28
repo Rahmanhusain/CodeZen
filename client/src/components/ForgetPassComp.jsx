@@ -201,7 +201,7 @@ export default function ForgetPassComp() {
                 } font-medium rounded-lg text-sm px-5 py-[0.65rem] flex items-center justify-center gap-2`}
               >
                 {isSending && (
-                  <MiniloadIcon className="w-5 h-5 text-[#db4784] animate-spin" />
+                  <MiniloadIcon className="w-5 h-5 text-green-800 animate-spin" />
                 )}
                 {!isSending ? "Reset Password" : `Please Wait`}
               </button>
