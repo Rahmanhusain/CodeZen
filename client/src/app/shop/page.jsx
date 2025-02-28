@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const products = [
   { name: "Paper", price: "₹150", quantity: "5kg", link: "/products/paper", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKr7KLRYm614imBxNtYkLLjl1vfL9XgnsqKzHahAdByRTB7RvZw-oXjMA&s=10" },
@@ -16,7 +17,7 @@ function Page() {
   return (
     <div 
       className="relative w-full h-screen bg-cover bg-center" 
-      //style={{ backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQbvZ2tN5uBhSxIj6_-Dc8mqP0mFZebygsbClSt6xizaraR-pbK5XTa9f&s=10)' }} 
+      style={{ backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvQbvZ2tN5uBhSxIj6_-Dc8mqP0mFZebygsbClSt6xizaraR-pbK5XTa9f&s=10)', backgroundPosition: 'fixed' }} 
       >
      
 
@@ -31,18 +32,21 @@ function Page() {
 
 const ProductCard = ({ name, price, quantity, link, image }) => {
   return (
-    <div className="w-72 bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
-      <a href={link}>
+    <div className="w-72 bg-white rounded-lg box-shad overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <Link href={link}>
         <img src={image} alt={name} className="w-72 h-32 object-contain" />
-        <div className="p-3">
+        <div className="p-3 w-full">
           <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
           <p className="text-lg text-gray-600">{price}</p>
           <p className="text-sm text-gray-500">Min Quantity: {quantity}</p>
-          <button className="mt-3 w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+          <div className='w-full'>
+
+          <button  className="mt-3 w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
             Buy Now
           </button>
+          </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

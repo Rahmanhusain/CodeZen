@@ -1,25 +1,23 @@
 import About from "@/components/About";
 import Faq from "@/components/Faq";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import Image from "next/image";
 
 const faqData = [
   {
-    question: "What is Next.js?",
-    answer: "Next.js is a React framework that enables server-side rendering, static site generation, and other performance optimizations for React applications."
+    question: "How does the AI-powered waste recognition work?",
+    answer: "Our platform uses advanced AI technology to scan and identify the type of waste you want to dispose of."
   },
   {
-    question: "How do I install Next.js?",
-    answer: "You can create a new Next.js app using 'npx create-next-app@latest' which sets up everything automatically for you."
+    question: "What happens to the recyclable waste collected?",
+    answer: "We supply the collected recyclable materials to businesses who use them to create sustainable products"
   },
   {
-    question: "Is Next.js suitable for large applications?",
-    answer: "Yes, Next.js is designed to scale and can handle large applications with features like automatic code splitting and optimized performance."
+    question: "How can I schedule a waste pickup?",
+    answer: "You can easily schedule a waste pickup after logging into your profile ."
   },
-  {
-    question: "How do I deploy a Next.js application?",
-    answer: "Next.js applications can be deployed to Vercel (created by the same team behind Next.js) with zero configuration, or to any hosting provider that supports Node.js."
-  }
+  
 ]; 
 
 export default function Home() {
@@ -27,6 +25,7 @@ export default function Home() {
     <>
       <Hero/>
       <About />
+      <Services />
       <Faq faqs={faqData}  />
     </>
   );
