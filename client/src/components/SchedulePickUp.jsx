@@ -9,6 +9,9 @@ function SchedulePickUp() {
   const [itemCategory, setItemCategory] = useState("");
   const [pickupDate, setPickupDate] = useState("");
   const [pickupTime, setPickupTime] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [estimatedWeight, setEstimatedWeight] = useState("");
   const webcamRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cameraFacingMode, setCameraFacingMode] = useState("environment");
@@ -80,7 +83,7 @@ function SchedulePickUp() {
     setIsSubmitting(true);
     setTimeout(() => {
       alert(
-        `Pickup scheduled successfully!\nDate: ${pickupDate}\nTime: ${pickupTime}\nItem Category: ${itemCategory}`
+        `Pickup scheduled successfully!\nName: ${name}\nDescription: ${description}\nEstimated Weight: ${estimatedWeight}\nDate: ${pickupDate}\nTime: ${pickupTime}\nItem Category: ${itemCategory}`
       );
       setIsSubmitting(false);
       setCapturedImage(null);
@@ -88,6 +91,9 @@ function SchedulePickUp() {
       setItemCategory("");
       setPickupDate("");
       setPickupTime("");
+      setName("");
+      setDescription("");
+      setEstimatedWeight("");
     }, 1500);
   };
 
@@ -163,7 +169,7 @@ function SchedulePickUp() {
                       ref={webcamRef}
                       screenshotFormat="image/jpeg"
                       videoConstraints={videoConstraints}
-                      mirrored={cameraFacingMode === "user"}
+                      mirrored={cameraFacingMode === "environment"}
                       className="w-full h-full object-cover"
                     />
 
@@ -234,6 +240,69 @@ function SchedulePickUp() {
 
             <div className="mb-8">
               <h2 className="text-lg font-semibold text-gray-800 mb-4">
+                Item Details
+              </h2>
+
+              <div className="mb-6">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-black mb-2"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="mt-1 block w-full text-gray-600 rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 py-2 px-3 border"
+                  required
+                />
+              </div>
+
+              <div className="mb-6">
+                <label
+                  htmlFor="description"
+                  className="block text-sm font-medium text-black mb-2"
+                >
+                  Description
+                </label>
+                <textarea
+                  id="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  className="mt-1 block w-full text-gray-600 rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 py-2 px-3 border"
+                  required
+                />
+              </div>
+
+              <div className="mb-6">
+                <label
+                  htmlFor="estimated-weight"
+                  className="block text-sm font-medium text-black mb-2"
+                >
+                  Estimated Weight
+                </label>
+                <select
+                  id="estimated-weight"
+                  value={estimatedWeight}
+                  onChange={(e) => setEstimatedWeight(e.target.value)}
+                  className="mt-1 block w-full rounded-md text-gray-600 border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 py-2 px-3 border"
+                  required
+                >
+                  <option value="">Select a weight range</option>
+                  <option value="1-5 kg">1-5 kg</option>
+                  <option value="5-10 kg">5-10 kg</option>
+                  <option value="10-20 kg">10-20 kg</option>
+                  <option value="20-50 kg">20-50 kg</option>
+                  <option value="50-100 kg">50-100 kg</option>
+                  <option value="Above 100 kg">Above 100 kg</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-lg font-semibold text-gray-800 mb-4">
                 Schedule Your Pickup
               </h2>
 
@@ -281,10 +350,10 @@ function SchedulePickUp() {
             <button
               type="submit"
               disabled={
-                !pickupDate || !pickupTime || !itemCategory || isSubmitting
+                !pickupDate || !pickupTime || !itemCategory || !name || !description || !estimatedWeight || isSubmitting
               }
               className={`w-full py-3 px-4 rounded-md font-bold text-white ${
-                !pickupDate || !pickupTime || !itemCategory || isSubmitting
+                !pickupDate || !pickupTime || !itemCategory || !name || !description || !estimatedWeight || isSubmitting
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-teal-600 hover:bg-teal-700"
               } transition duration-200 flex justify-center items-center`}

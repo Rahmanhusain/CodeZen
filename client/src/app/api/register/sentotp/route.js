@@ -41,7 +41,7 @@ const addsecret = async (email, secret, otp) => {
       </p>
     </div>`;
   
-    await sendOtpEmail(email, htmlContent, "OTP to Create Account");
+   /*  await sendOtpEmail(email, htmlContent, "OTP to Create Account"); */
     await newSecret.save();
 
   } catch (error) {
@@ -86,7 +86,7 @@ const addsecretforget = async (email, secret, otp) => {
     </div>`;
   
 
-    await sendOtpEmail(email, htmlContent, "OTP to Reset Password");
+    /* await sendOtpEmail(email, htmlContent, "OTP to Reset Password"); */
     await newSecret.save();
 
   } catch (error) {

@@ -24,7 +24,8 @@ export default function Register() {
   const propemailRef = useRef({
     email: null,
     password: null,
-    usertype: null,
+    phoneNumber: null,
+    alternatePhoneNumber: null,
     name: null,
   });
   const messageref = useRef(null);
@@ -67,7 +68,9 @@ export default function Register() {
         propemailRef.current.email = formData.get("email");
         propemailRef.current.name = formData.get("name");
         propemailRef.current.password = formData.get("confirmpassword");
-        propemailRef.current.enrollmentno = formData.get("rollno");
+        propemailRef.current.phoneNumber = formData.get("phone");
+        propemailRef.current.alternatePhoneNumber = formData.get("altphone");
+
       } else if (status == 409) {
         messageref.current = "User already exist Login instead!";
         setisWarnOpen(true);
@@ -254,7 +257,7 @@ export default function Register() {
               <button
                 type="submit"
                 disabled={isSending}
-                className={`w-full text-text ${
+                className={`w-full text-text cursor-pointer ${
                   !isSending
                     ? "bg-green-800 focus:outline-none focus:ring-primary text-white"
                     : "bg-green-600"

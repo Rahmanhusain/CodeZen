@@ -63,7 +63,8 @@ const OTPhandle = ({ setIsOtpOpen, propemailRef, isforget }) => {
           name: propemailRef.name,
           otp: otp,
           password: propemailRef.password,
-          enrollmentno: propemailRef.enrollmentno,
+          phoneNumber: propemailRef.phoneNumber,
+          alternatePhoneNumber: propemailRef.alternatePhoneNumber,
         }),
       });
       const result = await res.json();
@@ -82,6 +83,7 @@ const OTPhandle = ({ setIsOtpOpen, propemailRef, isforget }) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: propemailRef.email,
+        
           otp: otp,
           password: propemailRef.password,
         }),

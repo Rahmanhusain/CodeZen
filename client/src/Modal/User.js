@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     unique: true,
   },
-  name: {
+  Profilename: {
     type: String,
     trim: true,
     required: true,
@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
-  profilePhoto: {
+  profilephotosrc: {
     type: String,
     default:
       "https://iffadcitwirnptuabcbr.supabase.co/storage/v1/object/public/findyourdateuserimages//avatar.png",
@@ -46,7 +46,7 @@ const UserSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: true,
+    default: "",
   },
   pickupSchedules: {
     type: [String], // Assuming pickup schedules are stored as strings

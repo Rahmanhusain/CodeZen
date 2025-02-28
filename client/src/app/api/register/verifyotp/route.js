@@ -33,7 +33,7 @@ async function SignJWT(email, password) {
 
 export async function POST(req) {
   await connectDB();
-  const { email, name, otp, password,enrollmentno} = await req.json();
+  const { email, name, otp, password,phoneNumber,alternatePhoneNumber} = await req.json();
 
   if (!email || !otp) {
     return NextResponse.json({
@@ -64,8 +64,8 @@ export async function POST(req) {
         Profilename: name,
         email,
         password: hashedPassword,
-        phoneNumber: null,
-        enrollmentno:enrollmentno,
+        phoneNumber: phoneNumber,
+        alternatePhoneNumber: alternatePhoneNumber,
       });
 
       // Save the new user record to the database
