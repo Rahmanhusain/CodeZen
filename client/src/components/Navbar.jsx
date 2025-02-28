@@ -35,7 +35,7 @@ export default function Navbar() {
                 <Link href="/blogs">Blog</Link>
                 <Link href="/contact">Contact</Link>
                 <Link href="/schedulepickup" className='bg-white text-green-800 px-4 py-2 rounded-full'>Schedule Pickup</Link>
-                <Link href="/"><img src="/profile.png" width={50} height={50} alt="user profile" /></Link>
+                <Link href="/profile"><img src="/profile.png" width={50} height={50} alt="user profile" /></Link>
             </nav>
         </div>
     );
