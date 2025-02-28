@@ -30,7 +30,7 @@ export default function Navbar() {
             </div>
             <nav className='flex flex-row gap-4 items-center '>
                 <Link href="/">Home</Link>
-                <Link href="/#service">Services</Link>
+                <Link href="/leaderboard">Leaderboard</Link>
                 <Link href="/shop">Shop</Link>
                 <Link href="/blogs">Blog</Link>
                 <Link href="/contact">Contact</Link>
@@ -41,4 +41,3 @@ export default function Navbar() {
     );
 }
 
-// The navbar will now start with a light background and turn darker when you scroll! Let me know if you want me to tweak the colors or add anything else. 🚀

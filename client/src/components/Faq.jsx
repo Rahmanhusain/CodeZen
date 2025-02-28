@@ -40,7 +40,7 @@ const FAQItem = ({ question, answer }) => {
 
 const Faq = ({ faqs }) =>  {
     return (
-        <div className='text-center mt-20'>
+        <div className='text-center my-20'>
             <img src="/logo.png" alt="" className='h-14 m-auto' />
             <h1 className='text-4xl font-serif text-green-800'>FAQ</h1>
             <p className='text-green-800 mb-20'>Frequently Asked Question</p>
