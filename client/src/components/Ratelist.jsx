@@ -11,59 +11,59 @@ export default function Ratelist() {
       image: "https://www.thekabadiwala.com/images/scrap-prices/scrap-paper.webp",
       description: "Paper scrap includes newspapers, books, cartons, magazines, and beverage cartons.",
       items: [
-        { name: "Newspaper", price: "₹10 /Kg" },
-        { name: "Books", price: "₹10 /Kg" },
-        { name: "Carton", price: "₹10 /Kg" },
-        { name: "Magazines", price: "₹7 /Kg" },
-        { name: "White Papers", price: "₹7 /Kg" },
-        { name: "Used Beverage Carton", price: "₹5 /Kg" },
+        { name: "Newspaper", unit: "kg" ,price: "₹10" },
+        { name: "Books", unit: "kg" ,price: "₹10" },
+        { name: "Carton", unit: "kg" ,price: "₹10" },
+        { name: "Magazines", unit: "kg" ,price: "₹7" },
+        { name: "White Papers", unit: "kg" ,price: "₹7" },
+        { name: "Used Beverage Carton", unit: "kg" ,price: "₹5" },
       ],
     },
     Plastic: {
       image: "https://www.thekabadiwala.com/images/scrap-prices/scrap-paper.webp",
       description: "Plastic scrap includes soft plastic, polythene, plastic jars, and fibre.",
       items: [
-        { name: "Soft Plastic", price: "₹6 /Kg" },
-        { name: "Hard Plastic", price: "₹1 /Kg" },
-        { name: "Mix Plastic", price: "₹4 /Kg" },
-        { name: "Milk Covers", price: "₹2 /Kg" },
-        { name: "Plastic Jar (5ltr)", price: "₹7 /Piece" },
-        { name: "Plastic Jar (15ltr)", price: "₹10 /Piece" },
+        { name: "Soft Plastic", unit: "kg" ,price: "₹6" },
+        { name: "Hard Plastic", unit: "kg" ,price: "₹1" },
+        { name: "Mix Plastic", unit: "kg" ,price: "₹4" },
+        { name: "Milk Covers", unit: "kg" ,price: "₹2" },
+        { name: "Plastic Jar (5ltr)", unit: "piece" ,price: "₹7 " },
+        { name: "Plastic Jar (15ltr)", unit: "piece" ,price: "₹10 " },
       ],
     },
     Metal: {
       image: "https://www.thekabadiwala.com/images/scrap-prices/scrap-paper.webp",
       description: "Metal scrap includes iron, steel, aluminum, copper, and brass.",
       items: [
-        { name: "Iron", price: "₹20 /Kg" },
-        { name: "Steel", price: "₹25 /Kg" },
-        { name: "Aluminum", price: "₹50 /Kg" },
-        { name: "Copper", price: "₹600 /Kg" },
-        { name: "Brass", price: "₹450 /Kg" },
+        { name: "Iron", unit: "kg" ,price: "₹20" },
+        { name: "Steel", unit: "kg" ,price: "₹25" },
+        { name: "Aluminum", unit: "kg" ,price: "₹50" },
+        { name: "Copper", unit: "kg" ,price: "₹600" },
+        { name: "Brass", unit: "kg" ,price: "₹450" },
       ],
     },
     "E-Waste": {
       image: "https://www.thekabadiwala.com/images/scrap-prices/scrap-paper.webp",
       description: "E-Waste includes discarded electronic items like laptops, batteries, wires, and appliances.",
       items: [
-        { name: "Laptops", price: "₹500 /Piece" },
-        { name: "Mobile Phones", price: "₹200 /Piece" },
-        { name: "Computer Monitor", price: "₹150 /Piece" },
-        { name: "Old Batteries", price: "₹80 /Kg" },
-        { name: "Wires & Cables", price: "₹40 /Kg" },
-        { name: "Television", price: "₹250 /Piece" },
+        { name: "Laptops", unit: "piece" ,price: "₹500 " },
+        { name: "Mobile Phones", unit: "piece" ,price: "₹200 " },
+        { name: "Computer Monitor", unit: "piece" ,price: "₹150 " },
+        { name: "Old Batteries", unit: "kg" ,price: "₹80" },
+        { name: "Wires & Cables", unit: "kg" ,price: "₹40" },
+        { name: "Television", unit: "piece" ,price: "₹250 " },
       ],
     },
     Others: {
       image: "https://www.thekabadiwala.com/images/scrap-prices/scrap-paper.webp",
       description: "Miscellaneous scrap items such as glass, clothes, and wood.",
       items: [
-        { name: "Glass Bottles", price: "₹2 /Kg" },
-        { name: "Old Clothes", price: "₹10 /Kg" },
-        { name: "Wooden Items", price: "₹5 /Kg" },
-        { name: "Tyres", price: "₹20 /Piece" },
-        { name: "Rubber", price: "₹15 /Kg" },
-        { name: "Electronic Accessories", price: "₹50 /Kg" },
+        { name: "Glass Bottles", unit: "kg" ,price: "₹2" },
+        { name: "Old Clothes", unit: "kg" ,price: "₹10" },
+        { name: "Wooden Items", unit: "kg" ,price: "₹5" },
+        { name: "Tyres", unit: "piece" ,price: "₹20 " },
+        { name: "Rubber", unit: "kg" ,price: "₹15" },
+        { name: "Electronic Accessories", unit: "kg" ,price: "₹50" },
       ],
     },
   };
@@ -76,7 +76,7 @@ export default function Ratelist() {
           <button
             key={index}
             className={`px-4 py-4 cursor-pointer mb-6 flex-grow rounded-lg transition-all duration-300 ${
-                selectedCategory === category ? "bg-green-800 text-white" : "bg-gray-200 text-black"
+                selectedCategory === category ? "bg-green-800 text-white" : "bg-green-200 text-black"
             } hover:bg-green-800 hover:text-white`}
             onClick={() => setSelectedCategory(category)}
           >
@@ -108,9 +108,9 @@ export default function Ratelist() {
                 {/* Price Cards */}
                 <div className="grid grid-cols-4  justify-start gap-4">
                   {data.items.map((item, idx) => (
-                    <div key={idx} className="bg-gray-100 p-4 rounded-lg w-54 h-28 flex flex-col items-center justify-center  shadow-md">
+                    <div key={idx} className="bg-green-100 p-4 rounded-lg w-54 h-28 flex flex-col items-center justify-center  shadow-md">
                       <h3 className="text-lg font-semibold">{item.name}</h3>
-                      <p className="text-green-600">{item.price}</p>
+                      <p className="text-green-600">{item.price}/{item.unit}</p>
                     </div>
                   ))}
                 </div>

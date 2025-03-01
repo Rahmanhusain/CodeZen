@@ -4,8 +4,8 @@ import React from 'react';
 const ContactForm = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="w-1/3 p-4 sm:w-3/5 md:w-2/5 lg:w-2/5 xl:w-2/5 mt-6 bg-transparent border border-green-500 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-semibold text-green-500 mb-4 text-center">Contact Us</h2>
+      <div className="w-1/3 p-4 sm:w-3/5 md:w-2/5 lg:w-2/5 xl:w-2/5 mt-6  bg-white box-shad rounded-lg shadow-lg">
+        <h2 className="text-3xl font-semibold text-green-800 mb-4 text-center">Contact Us</h2>
         
         <form>
           <div className="mb-4">
@@ -14,7 +14,7 @@ const ContactForm = () => {
               type="text"
               id="name"
               name="name"
-              className="w-full p-3 mt-2 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-3 mt-2 border border-green-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
               placeholder="Your Name"
             />
           </div>
@@ -25,7 +25,7 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full p-3 mt-2 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-3 mt-2 border border-green-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
               placeholder="Your Email"
             />
           </div>
@@ -36,7 +36,7 @@ const ContactForm = () => {
               id="message"
               name="message"
               rows="4"
-              className="w-full p-3 mt-2 border border-green-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-3 mt-2 border border-green-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-800"
               placeholder="Your Message">
               </textarea>
           </div>
